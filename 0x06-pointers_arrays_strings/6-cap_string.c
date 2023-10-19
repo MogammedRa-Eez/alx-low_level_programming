@@ -24,7 +24,7 @@ char *cap_string(char *a)
 			{
 				for (j = 0; j <= 12; j++)
 				{
-					if (s[j] == *(a + i - 1))
+					if (*(s + j) == *(a + i - 1))
 					{
 						*(a + i) = *(a + i) - 32;
 					}
