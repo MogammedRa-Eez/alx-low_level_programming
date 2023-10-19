@@ -5,7 +5,7 @@
 * @dest: string that will be copied
 * @src: string that will be copying
 * @n: size of the string
-* Return: Always 0
+* Return: dest
 */
 
 char *_strncpy(char *dest, char *src, int n)
@@ -18,6 +18,6 @@ char *_strncpy(char *dest, char *src, int n)
 	for (i = 0 ; i < n; i++)
 		*(dest + i) = '\0';
 
-	return (0);
+	return (dest);
 }
 
