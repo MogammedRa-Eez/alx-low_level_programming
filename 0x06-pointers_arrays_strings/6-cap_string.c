@@ -2,37 +2,35 @@
 
 /**
 * cap_string - Capitalizes all words of a string.
-* @a: The string to be capitalized.
+* @str: The string to be capitalized.
 * Return: string with all capitalised words
 */
 
-char *cap_string(char *a)
+char *cap_string(char *str)
 {
-	int i, j;
-	char s[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	int ptr = 0;
 
-	i = 0;
-	while (*(a + i) != '\0')
+	while (*(str + ptr))
 	{
-		if (*(a + i) >= 's' && *(a + i) <= 'z')
-		{
-			if (i == 0)
-			{
-				*(a + i) = *(a + i) - 32;
-			}
-			else
-			{
-				for (j = 0; j <= 12; j++)
-				{
-					if (*(s + j) == *(a + i - 1))
-					{
-						*(a + i) = *(a + i) - 32;
-					}
-				}
-			}
-		}
-	i++;
+		while (!(*(str + ptr) >= 'a' && *(str + ptr) <= 'z'))
+			ptr++;
+		if (*(str + ptr - 1) == ' ' ||
+				*(str + ptr - 1) == '\t' ||
+				*(str + ptr - 1) == '\n' ||
+				*(str + ptr - 1) == ',' ||
+				*(str + ptr - 1) == ';' ||
+				*(str + ptr - 1) == '.' ||
+				*(str + ptr - 1) == '!' ||
+				*(str + ptr - 1) == '?' ||
+				*(str + ptr - 1) == '"' ||
+				*(str + ptr - 1) == '(' ||
+				*(str + ptr - 1) == ')' ||
+				*(str + ptr - 1) == '{' ||
+				*(str + ptr - 1) == '}' ||
+				ptr == 0)
+			*(str + ptr) -= 32;
+		ptr++;
 	}
-	return (a);
+	return (str);
 }
 
