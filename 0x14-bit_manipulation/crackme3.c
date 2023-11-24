@@ -1,1 +1,2 @@
-cat 101-password
+!#/bin/bash
+echo "cat 101-password"
