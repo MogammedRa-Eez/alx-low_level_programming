@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * read_textfile - that reads a text file and prints it to a POSIX
+ * read_textfile - reads a text file and prints it to a POSIX
  * @filename: variable pointer
  * @letters: size letters
  *
